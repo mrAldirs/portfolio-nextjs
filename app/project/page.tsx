@@ -24,7 +24,7 @@ const projects = [
       'Developed a restaurant management system with Odoo for a vegetarian eatery, using Python, JavaScript, and PostgreSQL for seamless integration.',
     stack: [
       { name: 'Python' },
-      { name: 'JavaScript' },
+      { name: 'Js' },
       { name: 'Postgresql' },
       { name: '+3' },
     ],
@@ -83,6 +83,22 @@ const projects = [
       { name: '+3' },
     ],
     image: '/assets/project/thumb5.png',
+    live: '',
+    github: '',
+  },
+  {
+    num: '06',
+    category: 'web',
+    title: 'Atlet Management',
+    description:
+      'Developed a website for the cultural department of a local government, enhancing user experience with PHP, JavaScript, and other.',
+    stack: [
+      { name: 'PHP' },
+      { name: 'JavaScript' },
+      { name: 'Laravel' },
+      { name: '+3' },
+    ],
+    image: '/assets/project/thumb6.png',
     live: '',
     github: '',
   },
