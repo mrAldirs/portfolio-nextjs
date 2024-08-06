@@ -19,7 +19,7 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: 'Phone',
-    description: '(+62) 812 4971 0599',
+    description: '(+62) 815 2976 3081',
   },
   {
     icon: <FaEnvelope />,

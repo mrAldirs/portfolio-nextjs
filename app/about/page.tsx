@@ -37,7 +37,7 @@ const about = {
     },
     {
       fieldName: 'Phone',
-      fieldValue: '(+62) 812 4971 0599',
+      fieldValue: '(+62) 815 2976 3081',
     },
     {
       fieldName: 'Date of Birth',
