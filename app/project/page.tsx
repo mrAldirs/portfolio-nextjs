@@ -102,6 +102,17 @@ const projects = [
     live: '',
     github: '',
   },
+  {
+    num: '07',
+    category: 'android',
+    title: 'Vapestore Application',
+    description:
+      'Develop and create Android-based applications to satisfy vape sales demands with Kotlin programming language.',
+    stack: [{ name: 'Kotlin' }, { name: 'Mysql' }],
+    image: '/assets/project/thumb7.png',
+    live: '',
+    github: '',
+  },
 ];
 
 const Project = () => {
