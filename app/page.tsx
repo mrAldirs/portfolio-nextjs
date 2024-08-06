@@ -23,10 +23,9 @@ const Home = () => {
             {/* button and socials */}
             <div className='flex flex-col xl:flex-row  items-center gap-8'>
               <Button
-                href='/assets/curriculum-vitae.pdf'
+                href='https://drive.google.com/file/d/1gyrAHqjXOmuqox5FsNFgYMcm0jljbydX/view?usp=sharing'
                 variant='outline'
                 size='lg'
-                download='CV - Aldi Rosid Saputra.pdf'
                 className='uppercase flex items-center gap-2'
               >
                 <span>Download CV</span>

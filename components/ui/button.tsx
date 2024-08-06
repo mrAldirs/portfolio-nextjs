@@ -32,29 +32,22 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   href?: string;
-  download?: string;
 }
 
 const Button = React.forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   ButtonProps
->(
-  (
-    { className, variant, size, asChild = false, href, download, ...props },
-    ref
-  ) => {
-    const Comp = asChild ? Slot : href ? 'a' : 'button';
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref as React.Ref<HTMLButtonElement & HTMLAnchorElement>}
-        href={href}
-        download={download}
-        {...props}
-      />
-    );
-  }
-);
+>(({ className, variant, size, asChild = false, href, ...props }, ref) => {
+  const Comp = asChild ? Slot : href ? 'a' : 'button';
+  return (
+    <Comp
+      className={cn(buttonVariants({ variant, size, className }))}
+      ref={ref as React.Ref<HTMLButtonElement & HTMLAnchorElement>}
+      href={href}
+      {...props}
+    />
+  );
+});
 Button.displayName = 'Button';
 
 export { Button, buttonVariants };

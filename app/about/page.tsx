@@ -94,11 +94,11 @@ const education = {
   icon: '/assets/resume/cap.svg',
   title: 'My education',
   description:
-    'Completed an Associate Degree in Information Management at State Polytechnic of Malang.',
+    'Completed an Associate Degree in Informatics Management at State Polytechnic of Malang.',
   items: [
     {
       institution: 'State Polytechnic of Malang',
-      degree: 'Associate Degree in Information Management',
+      degree: 'Associate Degree in Informatics Management',
       duration: '2020 - 2023',
     },
     {
@@ -271,7 +271,9 @@ const About = () => {
                           <div className='flex items-center gap-3'>
                             {/* dot */}
                             <span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
-                            <p className='text-white/60'>{item.institution}</p>
+                            <p className='text-white/60 text-[14px] xl:text-sm'>
+                              {item.institution}
+                            </p>
                           </div>
                         </li>
                       );
