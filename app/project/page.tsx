@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -118,6 +118,14 @@ const projects = [
 const Project = () => {
   const [project, setProject] = useState(projects[0]);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageUrl, setModalImageUrl] = useState('');
+
+  const handleImageClick = (imageUrl: string) => {
+    setModalImageUrl(imageUrl);
+    setIsModalOpen(true);
+  };
+
   const handleSlideChange = (swiper: any) => {
     // get current slide index
     const currentIndex = swiper.activeIndex;
@@ -209,7 +217,10 @@ const Project = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className='w-full'>
-                    <div className='h-[420px] relative group flex justify-center items-center bg-pink-50/20'>
+                    <div
+                      className='h-[420px] relative group flex justify-center items-center bg-pink-50/20'
+                      onClick={() => handleImageClick(project.image)}
+                    >
                       {/* overlay */}
                       <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'></div>
                       {/* image */}
@@ -234,6 +245,34 @@ const Project = () => {
           </div>
         </div>
       </div>
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className='fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsModalOpen(false)}
+          >
+            <motion.div
+              className='bg-inherit p-4 rounded-md m-4 xl:m-2 relative w-[90vw] h-[90vh]'
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+            >
+              <div className='relative w-full h-full'>
+                <Image
+                  src={modalImageUrl}
+                  alt='Modal Image'
+                  layout='fill'
+                  objectFit='contain'
+                  className='object-contain'
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 };
